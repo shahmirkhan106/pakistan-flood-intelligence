@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e53ab0e583501adff2b3f8da96fd291c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+    <div style="position:fixed;bottom:30px;left:30px;z-index:1000;
+         background:#0a1520;border:1px solid #00b4ff44;padding:14px;
+         font-family:monospace;font-size:12px;color:#7ab3cc;border-radius:4px">
+      <b style="color:#00b4ff">2025 FLOOD RISK — REAL GEE DATA</b><br><br>
+      <span style="color:#ff2d55">■</span> Critical (&gt;80%)<br>
+      <span style="color:#ff6b35">■</span> High (60–80%)<br>
+      <span style="color:#ffc800">■</span> Medium (40–60%)<br>
+      <span style="color:#0088cc">■</span> Low (20–40%)<br>
+      <span style="color:#1a4a6a">■</span> Minimal (&lt;20%)<br>
+      <hr style="border-color:#00b4ff33;margin:8px 0">
+      <span style="color:#00ffd0">Sentinel-1 SAR + SMAP + CHIRPS</span><br>
+      <span style="color:#00ffd0">RF + GBT Ensemble · GEE v3.0</span>
+    </div>
+    
+            <div class="folium-map" id="map_e53ab0e583501adff2b3f8da96fd291c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e53ab0e583501adff2b3f8da96fd291c = L.map(
+                "map_e53ab0e583501adff2b3f8da96fd291c",
+                {
+                    center: [30.3753, 69.3451],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f1e7fd6d5a70fea6e09a84d90fc2bcfb = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "CartoDB Dark",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f1e7fd6d5a70fea6e09a84d90fc2bcfb.addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            var rectangle_e03f768b9c9f93da4488eafa0ecdc75f = L.rectangle(
+                [[23.5, 66.5], [28.5, 71.5]],
+                {"bubblingMouseEvents": true, "color": "#ff2d55", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2d55", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            rectangle_e03f768b9c9f93da4488eafa0ecdc75f.bindTooltip(
+                `<div>
+                     Sindh: 92.2% flood risk
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f30f90fb39ce5c36b045dd32aca08994 = L.marker(
+                [25.8, 68.8],
+                {
+}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            var div_icon_b1c95255cd8d48f322139fdc6b2d4e97 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family:monospace;font-size:11px;font-weight:bold;color:#ff2d55;text-shadow:0 0 6px #ff2d55\"\u003eSindh\u003cbr\u003e92%\u003c/div\u003e",
+  "iconSize": [80, 30],
+  "iconAnchor": [40, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_37f08be80ee749766e39b899c518860f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_bfbe700516628e944e6029ed7fc2a7eb = $(`<div id="html_bfbe700516628e944e6029ed7fc2a7eb" style="width: 100.0%; height: 100.0%;">         <div style="font-family:monospace;font-size:12px;padding:10px;min-width:220px">           <b style="color:#ff2d55;font-size:14px">Sindh</b>           <hr style="border-color:#333;margin:5px 0">           <b>Ensemble risk: 92.2%</b><br>           RF model:  87.0%<br>           GB model:  100.0%<br>           <hr style="border-color:#333;margin:5px 0">           SAR delta:  -0.87 dB<br>           Soil moist: 0.25<br>           Rainfall:   162.5 mm<br>           NDVI:       0.26<br>           <hr style="border-color:#333;margin:5px 0">           <b style="color:#ff2d55">FLOOD</b>           · HIGH         </div></div>`)[0];
+                popup_37f08be80ee749766e39b899c518860f.setContent(html_bfbe700516628e944e6029ed7fc2a7eb);
+            
+        
+
+        marker_f30f90fb39ce5c36b045dd32aca08994.bindPopup(popup_37f08be80ee749766e39b899c518860f)
+        ;
+
+        
+    
+    
+                marker_f30f90fb39ce5c36b045dd32aca08994.setIcon(div_icon_b1c95255cd8d48f322139fdc6b2d4e97);
+            
+    
+            var rectangle_6fa83e212583b3caf5aa8ef2eacd5c8a = L.rectangle(
+                [[28.5, 70.0], [34.0, 75.5]],
+                {"bubblingMouseEvents": true, "color": "#ff6b35", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6b35", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            rectangle_6fa83e212583b3caf5aa8ef2eacd5c8a.bindTooltip(
+                `<div>
+                     Punjab: 75.7% flood risk
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_27c33532b25cd932430ee730ae8f7fb9 = L.marker(
+                [31.0, 72.3],
+                {
+}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            var div_icon_ca5bce4ee7705afd42b8c38b83d2e776 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family:monospace;font-size:11px;font-weight:bold;color:#ff6b35;text-shadow:0 0 6px #ff6b35\"\u003ePunjab\u003cbr\u003e76%\u003c/div\u003e",
+  "iconSize": [80, 30],
+  "iconAnchor": [40, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_139c4762c8ba1ff20914194f7d359d4e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7428e573eec48fd2e4a1a0dd2fae0ba1 = $(`<div id="html_7428e573eec48fd2e4a1a0dd2fae0ba1" style="width: 100.0%; height: 100.0%;">         <div style="font-family:monospace;font-size:12px;padding:10px;min-width:220px">           <b style="color:#ff6b35;font-size:14px">Punjab</b>           <hr style="border-color:#333;margin:5px 0">           <b>Ensemble risk: 75.7%</b><br>           RF model:  59.6%<br>           GB model:  99.9%<br>           <hr style="border-color:#333;margin:5px 0">           SAR delta:  -1.2 dB<br>           Soil moist: 0.25<br>           Rainfall:   353.5 mm<br>           NDVI:       0.352<br>           <hr style="border-color:#333;margin:5px 0">           <b style="color:#ff6b35">FLOOD</b>           · HIGH         </div></div>`)[0];
+                popup_139c4762c8ba1ff20914194f7d359d4e.setContent(html_7428e573eec48fd2e4a1a0dd2fae0ba1);
+            
+        
+
+        marker_27c33532b25cd932430ee730ae8f7fb9.bindPopup(popup_139c4762c8ba1ff20914194f7d359d4e)
+        ;
+
+        
+    
+    
+                marker_27c33532b25cd932430ee730ae8f7fb9.setIcon(div_icon_ca5bce4ee7705afd42b8c38b83d2e776);
+            
+    
+            var rectangle_58682bea55c1335516751b4d38a18652 = L.rectangle(
+                [[24.5, 60.5], [32.0, 70.0]],
+                {"bubblingMouseEvents": true, "color": "#ff2d55", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2d55", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            rectangle_58682bea55c1335516751b4d38a18652.bindTooltip(
+                `<div>
+                     Balochistan: 87.8% flood risk
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4ec912c87d2ddf2f3b745131ae049d20 = L.marker(
+                [28.5, 65.0],
+                {
+}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            var div_icon_40412a2f7065d001e4e83b2ea66410cf = L.divIcon({
+  "html": "\u003cdiv style=\"font-family:monospace;font-size:11px;font-weight:bold;color:#ff2d55;text-shadow:0 0 6px #ff2d55\"\u003eBalochistan\u003cbr\u003e88%\u003c/div\u003e",
+  "iconSize": [80, 30],
+  "iconAnchor": [40, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_81d7048f6aa2839ed71952ca1961995a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9c7a79e4b46b4856d86d80c5aedc588a = $(`<div id="html_9c7a79e4b46b4856d86d80c5aedc588a" style="width: 100.0%; height: 100.0%;">         <div style="font-family:monospace;font-size:12px;padding:10px;min-width:220px">           <b style="color:#ff2d55;font-size:14px">Balochistan</b>           <hr style="border-color:#333;margin:5px 0">           <b>Ensemble risk: 87.8%</b><br>           RF model:  79.7%<br>           GB model:  100.0%<br>           <hr style="border-color:#333;margin:5px 0">           SAR delta:  0.19 dB<br>           Soil moist: 0.25<br>           Rainfall:   66.2 mm<br>           NDVI:       0.077<br>           <hr style="border-color:#333;margin:5px 0">           <b style="color:#ff2d55">FLOOD</b>           · HIGH         </div></div>`)[0];
+                popup_81d7048f6aa2839ed71952ca1961995a.setContent(html_9c7a79e4b46b4856d86d80c5aedc588a);
+            
+        
+
+        marker_4ec912c87d2ddf2f3b745131ae049d20.bindPopup(popup_81d7048f6aa2839ed71952ca1961995a)
+        ;
+
+        
+    
+    
+                marker_4ec912c87d2ddf2f3b745131ae049d20.setIcon(div_icon_40412a2f7065d001e4e83b2ea66410cf);
+            
+    
+            var rectangle_93f325f878cd08c5897ff091569e8cf8 = L.rectangle(
+                [[32.5, 69.5], [36.5, 74.5]],
+                {"bubblingMouseEvents": true, "color": "#ff2d55", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff2d55", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            rectangle_93f325f878cd08c5897ff091569e8cf8.bindTooltip(
+                `<div>
+                     KPK: 87.5% flood risk
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_67ed4d2113de67615e83defc0d295a90 = L.marker(
+                [34.0, 71.5],
+                {
+}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            var div_icon_f768be94ec8ff4f3aa77077ede08c703 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family:monospace;font-size:11px;font-weight:bold;color:#ff2d55;text-shadow:0 0 6px #ff2d55\"\u003eKPK\u003cbr\u003e88%\u003c/div\u003e",
+  "iconSize": [80, 30],
+  "iconAnchor": [40, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_858649017783c0d0cbce668b3dd4b22f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_17cae5ca521bf46a2eb9774aa75fd0d6 = $(`<div id="html_17cae5ca521bf46a2eb9774aa75fd0d6" style="width: 100.0%; height: 100.0%;">         <div style="font-family:monospace;font-size:12px;padding:10px;min-width:220px">           <b style="color:#ff2d55;font-size:14px">KPK</b>           <hr style="border-color:#333;margin:5px 0">           <b>Ensemble risk: 87.5%</b><br>           RF model:  79.3%<br>           GB model:  99.8%<br>           <hr style="border-color:#333;margin:5px 0">           SAR delta:  -0.62 dB<br>           Soil moist: 0.25<br>           Rainfall:   292.8 mm<br>           NDVI:       0.291<br>           <hr style="border-color:#333;margin:5px 0">           <b style="color:#ff2d55">FLOOD</b>           · HIGH         </div></div>`)[0];
+                popup_858649017783c0d0cbce668b3dd4b22f.setContent(html_17cae5ca521bf46a2eb9774aa75fd0d6);
+            
+        
+
+        marker_67ed4d2113de67615e83defc0d295a90.bindPopup(popup_858649017783c0d0cbce668b3dd4b22f)
+        ;
+
+        
+    
+    
+                marker_67ed4d2113de67615e83defc0d295a90.setIcon(div_icon_f768be94ec8ff4f3aa77077ede08c703);
+            
+    
+            var rectangle_d7653ba82be628e288ecc4cc7bcd359b = L.rectangle(
+                [[34.5, 72.0], [37.5, 77.5]],
+                {"bubblingMouseEvents": true, "color": "#ff6b35", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6b35", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            rectangle_d7653ba82be628e288ecc4cc7bcd359b.bindTooltip(
+                `<div>
+                     GB: 67.7% flood risk
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f2bba6c39c3deba4ebdbe20dbd828d61 = L.marker(
+                [35.8, 74.5],
+                {
+}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            var div_icon_188ff6dbfebc18ad129b627b51dfa8d6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family:monospace;font-size:11px;font-weight:bold;color:#ff6b35;text-shadow:0 0 6px #ff6b35\"\u003eGB\u003cbr\u003e68%\u003c/div\u003e",
+  "iconSize": [80, 30],
+  "iconAnchor": [40, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_6857e1fa8e3bbfe9ee72f0264e90215f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7b7e904db96ff89f50b3a3a69cfafbdf = $(`<div id="html_7b7e904db96ff89f50b3a3a69cfafbdf" style="width: 100.0%; height: 100.0%;">         <div style="font-family:monospace;font-size:12px;padding:10px;min-width:220px">           <b style="color:#ff6b35;font-size:14px">GB</b>           <hr style="border-color:#333;margin:5px 0">           <b>Ensemble risk: 67.7%</b><br>           RF model:  53.4%<br>           GB model:  89.1%<br>           <hr style="border-color:#333;margin:5px 0">           SAR delta:  -0.44 dB<br>           Soil moist: 0.25<br>           Rainfall:   153.8 mm<br>           NDVI:       0.176<br>           <hr style="border-color:#333;margin:5px 0">           <b style="color:#ff6b35">FLOOD</b>           · MEDIUM         </div></div>`)[0];
+                popup_6857e1fa8e3bbfe9ee72f0264e90215f.setContent(html_7b7e904db96ff89f50b3a3a69cfafbdf);
+            
+        
+
+        marker_f2bba6c39c3deba4ebdbe20dbd828d61.bindPopup(popup_6857e1fa8e3bbfe9ee72f0264e90215f)
+        ;
+
+        
+    
+    
+                marker_f2bba6c39c3deba4ebdbe20dbd828d61.setIcon(div_icon_188ff6dbfebc18ad129b627b51dfa8d6);
+            
+    
+            var rectangle_c267a3703b382ccda59af4395fd2c560 = L.rectangle(
+                [[33.0, 73.0], [35.5, 75.5]],
+                {"bubblingMouseEvents": true, "color": "#ff6b35", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6b35", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            rectangle_c267a3703b382ccda59af4395fd2c560.bindTooltip(
+                `<div>
+                     AJK: 64.2% flood risk
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8b3a73a065c6613ef0996932fa312959 = L.marker(
+                [34.0, 74.2],
+                {
+}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+        
+    
+            var div_icon_655ae5c8ea22aa8e0631e34beddd77ac = L.divIcon({
+  "html": "\u003cdiv style=\"font-family:monospace;font-size:11px;font-weight:bold;color:#ff6b35;text-shadow:0 0 6px #ff6b35\"\u003eAJK\u003cbr\u003e64%\u003c/div\u003e",
+  "iconSize": [80, 30],
+  "iconAnchor": [40, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_03fb3cd465d153e68d84808d7bd66e45 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_47d1dfa298731dd383275a454cd2fa1c = $(`<div id="html_47d1dfa298731dd383275a454cd2fa1c" style="width: 100.0%; height: 100.0%;">         <div style="font-family:monospace;font-size:12px;padding:10px;min-width:220px">           <b style="color:#ff6b35;font-size:14px">AJK</b>           <hr style="border-color:#333;margin:5px 0">           <b>Ensemble risk: 64.2%</b><br>           RF model:  47.1%<br>           GB model:  89.9%<br>           <hr style="border-color:#333;margin:5px 0">           SAR delta:  -0.79 dB<br>           Soil moist: 0.25<br>           Rainfall:   588.1 mm<br>           NDVI:       0.517<br>           <hr style="border-color:#333;margin:5px 0">           <b style="color:#ff6b35">FLOOD</b>           · MEDIUM         </div></div>`)[0];
+                popup_03fb3cd465d153e68d84808d7bd66e45.setContent(html_47d1dfa298731dd383275a454cd2fa1c);
+            
+        
+
+        marker_8b3a73a065c6613ef0996932fa312959.bindPopup(popup_03fb3cd465d153e68d84808d7bd66e45)
+        ;
+
+        
+    
+    
+                marker_8b3a73a065c6613ef0996932fa312959.setIcon(div_icon_655ae5c8ea22aa8e0631e34beddd77ac);
+            
+    
+            var tile_layer_4b9c3c4dcbcd2ef4cd430c17200339b2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_cb66cd2ff92bff741be6b7709f5c8a5b = new L.Control.MiniMap(
+                tile_layer_4b9c3c4dcbcd2ef4cd430c17200339b2,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": true,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_e53ab0e583501adff2b3f8da96fd291c.addControl(mini_map_cb66cd2ff92bff741be6b7709f5c8a5b);
+        
+    
+            var layer_control_b750d11abf79d3f7b7efa6a48833b19b_layers = {
+                base_layers : {
+                    "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" : tile_layer_f1e7fd6d5a70fea6e09a84d90fc2bcfb,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_b750d11abf79d3f7b7efa6a48833b19b = L.control.layers(
+                layer_control_b750d11abf79d3f7b7efa6a48833b19b_layers.base_layers,
+                layer_control_b750d11abf79d3f7b7efa6a48833b19b_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_e53ab0e583501adff2b3f8da96fd291c);
+
+        
+</script>
+</html>

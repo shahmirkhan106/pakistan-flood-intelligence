@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-06-07T18:46:55.879458",
+  "model": "RF+GB Ensemble v3.0 \u2014 Real GEE Data",
+  "year": 2025,
+  "data_source": "Sentinel-1 SAR \u00b7 SMAP \u00b7 CHIRPS \u00b7 Sentinel-2 NDVI \u00b7 SRTM DEM",
+  "predictions": {
+    "Sindh": {
+      "rf_prob": 87.0,
+      "gb_prob": 100.0,
+      "ensemble_prob": 92.2,
+      "prediction": "FLOOD",
+      "confidence": "HIGH",
+      "sar_delta_db": -0.87,
+      "soil_moisture": 0.25,
+      "rainfall_mm": 162.5,
+      "ndvi": 0.26
+    },
+    "Punjab": {
+      "rf_prob": 59.6,
+      "gb_prob": 99.9,
+      "ensemble_prob": 75.7,
+      "prediction": "FLOOD",
+      "confidence": "HIGH",
+      "sar_delta_db": -1.2,
+      "soil_moisture": 0.25,
+      "rainfall_mm": 353.5,
+      "ndvi": 0.352
+    },
+    "Balochistan": {
+      "rf_prob": 79.7,
+      "gb_prob": 100.0,
+      "ensemble_prob": 87.8,
+      "prediction": "FLOOD",
+      "confidence": "HIGH",
+      "sar_delta_db": 0.19,
+      "soil_moisture": 0.25,
+      "rainfall_mm": 66.2,
+      "ndvi": 0.077
+    },
+    "KPK": {
+      "rf_prob": 79.3,
+      "gb_prob": 99.8,
+      "ensemble_prob": 87.5,
+      "prediction": "FLOOD",
+      "confidence": "HIGH",
+      "sar_delta_db": -0.62,
+      "soil_moisture": 0.25,
+      "rainfall_mm": 292.8,
+      "ndvi": 0.291
+    },
+    "GB": {
+      "rf_prob": 53.4,
+      "gb_prob": 89.1,
+      "ensemble_prob": 67.7,
+      "prediction": "FLOOD",
+      "confidence": "MEDIUM",
+      "sar_delta_db": -0.44,
+      "soil_moisture": 0.25,
+      "rainfall_mm": 153.8,
+      "ndvi": 0.176
+    },
+    "AJK": {
+      "rf_prob": 47.1,
+      "gb_prob": 89.9,
+      "ensemble_prob": 64.2,
+      "prediction": "FLOOD",
+      "confidence": "MEDIUM",
+      "sar_delta_db": -0.79,
+      "soil_moisture": 0.25,
+      "rainfall_mm": 588.1,
+      "ndvi": 0.517
+    }
+  },
+  "year_stats": {
+    "2010": {
+      "affected_millions": 9.2,
+      "flood_area_km2": 136890
+    },
+    "2011": {
+      "affected_millions": 34.5,
+      "flood_area_km2": 93597
+    },
+    "2012": {
+      "affected_millions": 10.2,
+      "flood_area_km2": 58123
+    },
+    "2013": {
+      "affected_millions": 5.6,
+      "flood_area_km2": 148002
+    },
+    "2014": {
+      "affected_millions": 8.5,
+      "flood_area_km2": 100712
+    },
+    "2015": {
+      "affected_millions": 13.2,
+      "flood_area_km2": 97585
+    },
+    "2016": {
+      "affected_millions": 24.5,
+      "flood_area_km2": 136164
+    },
+    "2017": {
+      "affected_millions": 11.2,
+      "flood_area_km2": 21539
+    },
+    "2018": {
+      "affected_millions": 9.1,
+      "flood_area_km2": 146003
+    },
+    "2019": {
+      "affected_millions": 31.2,
+      "flood_area_km2": 103638
+    },
+    "2020": {
+      "affected_millions": 23.0,
+      "flood_area_km2": 113105
+    },
+    "2021": {
+      "affected_millions": 10.3,
+      "flood_area_km2": 148018
+    },
+    "2022": {
+      "affected_millions": 33.0,
+      "flood_area_km2": 160000
+    },
+    "2023": {
+      "affected_millions": 17.6,
+      "flood_area_km2": 73639
+    },
+    "2024": {
+      "affected_millions": 20.6,
+      "flood_area_km2": 26575
+    }
+  }
+}
